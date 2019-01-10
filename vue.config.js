@@ -4,6 +4,9 @@ function resolve (dir) {
 }
 module.exports = {
     runtimeCompiler : true,
+    publicPath: "./",
+    // outputDir: 在npm run build时 生成文件的目录 type:string, default:'dist'
+    outputDir: 'dist',
     pages: {
         index: {
             entry: 'src/pages/index/index.js',
