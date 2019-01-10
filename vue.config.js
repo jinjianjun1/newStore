@@ -1,29 +1,54 @@
+const path = require('path');
+function resolve (dir) {
+    return path.join(__dirname, dir)
+}
 module.exports = {
+    runtimeCompiler : true,
     pages: {
-        index1: {
-            // page 的入口
-            entry: 'src/pages/index1/index1.js',
-            // 模板来源
-            template: 'public/index1.html',
-            // 在 dist/index.html 的输出
-            filename: 'index1.html',
-            // 当使用 title 选项时，
-            // template 中的 title 标签需要是 <title><%= htmlWebpackPlugin.options.title %></title>
-            title: 'Index1',
-            // 在这个页面中包含的块，默认情况下会包含
-            // 提取出来的通用 chunk 和 vendor chunk。
-            chunks: ['index1']
+        index: {
+            entry: 'src/pages/index/index.js',
+            template: 'public/index.html',
+            filename: 'index.html',
+            title:'index',
+            chunks: ['index']
         },
-        index2: {
-            // page 的入口
-            entry: 'src/pages/index2/index2.js',
-            // 模板来源
-            template: 'public/index2.html',
-            // 在 dist/index.html 的输出
-            filename: 'index2.html',
-            title:'Index2',
-            chunks: ['index2']
+        cart: {
+            entry: 'src/pages/cart/cart.js',
+            template: 'public/cart.html',
+            filename: 'cart.html',
+            title:'cart',
+            chunks: ['cart']
+        },
+        category: {
+            entry: 'src/pages/category/category.js',
+            template: 'public/category.html',
+            filename: 'category.html',
+            title:'category',
+            chunks: ['category']
+        },
+        goods: {
+            entry: 'src/pages/goods/goods.js',
+            template: 'public/goods.html',
+            filename: 'goods.html',
+            title:'goods',
+            chunks: ['goods']
+        },
+        member: {
+            entry: 'src/pages/member/member.js',
+            template: 'public/member.html',
+            filename: 'member.html',
+            title:'member',
+            chunks: ['member']
         }
 
+    },
+    chainWebpack: (config)=>{
+        config.resolve.alias
+            .set('@$', resolve('src'))
+            .set('assets',resolve('src/assets'))
+            .set('components',resolve('src/components'))
+            .set('js',resolve('src/assets/js'))
+            .set('base',resolve('src/base'))
+            .set('static',resolve('src/static'))
     }
 }
