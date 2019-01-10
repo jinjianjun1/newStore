@@ -4,8 +4,9 @@ function resolve (dir) {
 }
 module.exports = {
     runtimeCompiler : true,
-    publicPath: "/newStore/tree/master/dist/",
+    publicPath: './',
     // outputDir: 在npm run build时 生成文件的目录 type:string, default:'dist'
+
     outputDir: 'dist',
     pages: {
         index: {
