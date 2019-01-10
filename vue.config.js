@@ -4,7 +4,7 @@ function resolve (dir) {
 }
 module.exports = {
     runtimeCompiler : true,
-    publicPath: "https://github.com/jinjianjun1/newStore/tree/master/dist/",
+    publicPath: "/newStore/tree/master/dist/",
     // outputDir: 在npm run build时 生成文件的目录 type:string, default:'dist'
     outputDir: 'dist',
     pages: {
