@@ -4,10 +4,7 @@ function resolve (dir) {
 }
 module.exports = {
     runtimeCompiler : true,
-    publicPath: process.env.NODE_ENV === 'production'
-        ? '/newStore/'
-        : './',
-
+    publicPath: './',
     outputDir: 'dist',
     pages: {
         index: {
